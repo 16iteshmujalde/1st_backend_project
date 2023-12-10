@@ -8,7 +8,12 @@ dotenv.config(
 );
 
 connetDb()
-
+.then(() => {
+    console.log("Mongodb connection Successful");
+})
+.catch((error) => {
+    console.log(`Mongodb connection Failed: ${error}`);
+})
 /*
 const app = express(); //app
 (async () => {
