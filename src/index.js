@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 import connetDb from "./db/index.js";
-
+import app from "./app.js";
 dotenv.config(
     {
         path: "./env"
@@ -9,7 +9,9 @@ dotenv.config(
 
 connetDb()
 .then(() => {
-    console.log("Mongodb connection Successful");
+    app.listen(process.env.PORT || 8000, () => {
+        console.log(`⚙️ Server is running at port : ${process.env.PORT}`);
+    })
 })
 .catch((error) => {
     console.log(`Mongodb connection Failed: ${error}`);
