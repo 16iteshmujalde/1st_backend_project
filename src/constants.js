@@ -1,1 +1,1 @@
-export const DB_NAME = 'TASK MANAGER';
+export const DB_NAME = 'BACKEND_1ST';
