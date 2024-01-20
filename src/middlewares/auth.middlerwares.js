@@ -2,7 +2,7 @@ import { apiError } from "../utils/ApiError.js";
 import { User } from "../models/user.modes.js";
 import { asynchandler } from "../utils/asyncHandler.js";
 import  Jwt  from "jsonwebtoken";
-export const verifyJwt = asynchandler(async (req, res, next) => {
+export const verifyJwt = asynchandler(async (req,_, next) => {
     try {
         const token = req.cookies?.refreshToken || req.header("Authorization")?.replace("Bearer ", "");
         if(!token)
